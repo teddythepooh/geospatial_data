@@ -1,0 +1,17 @@
+acs_request:
+  endpoint: "https://api.census.gov/data/2021/acs/acs5"
+  params:
+    get: "B19013_001E" #Median household income in the past 12 months (in 2021 inflation-adjusted dollars)
+    for: "block group:*"
+    in: "state:17+county:031"
+    key: ""
+  output_name: block_level_household_income.csv
+
+decennial_census_request:
+  endpoint: "https://api.census.gov/data/2020/dec/dhc"
+  params:
+    get: "H1_001N,H8_001N" #HOUSING UNITS, TOTAL POPULATION IN OCCUPIED HOUSING UNITS
+    for: "block group:*"
+    in: "state:17+county:031"
+    key: ""
+  output_name: block_level_population_and_housing_units.csv
