@@ -14,7 +14,7 @@ If anyone would like to apply this repo in their work, note the following:
   
 - US Census aggregations are uniquely identified by GEOID. It is a 12-character alphanumeric sequence for block groups (STATE+COUNTY+TRACT+BLOCK GROUP|2+3+6+1=12). Leading zeroes need to be added where applicable.
 
-- The US Census does not formally obtain statistics at the "neighorhood" level for cities. Since a block group's geometry can reside within more than one neighborhood, dataset #4 above allows me to proportionally assign statistics by area. Suppose a block group has a population of 1000 people and 50% of its total area is within Albany Park; then, I would assign 500 of 1000 to Albany Park.
+- The US Census does not formally obtain statistics at the "neighborhood" level for cities. Since a block group's geometry can reside within more than one neighborhood, dataset #4 above allows me to proportionally assign statistics by area. Suppose a block group has a population of 1000 people and 50% of its total area is within Albany Park; then, I would assign 500 of 1000 to Albany Park.
 
 - I leverage the Albers Equal Area projection (ESPG: 9822) for area calculations, but I reproject the geometries to World Geodetic System 1984 (ESPG: 4326) for visualization.
 </div>
