@@ -3,19 +3,13 @@ import yaml
 import os
 import requests
 
-from dotenv import load_dotenv
-
-def main(config_file, type):
-   # Step 0: Assign api_key from environment to an api_key object.
-   load_dotenv()
-   api_key = os.getenv("api_key")
+def main(private_config_file, config_file, type):
+   # Step 0: Pull api_key from private_config.
+   api_key = private_config_file["api_key"]
    
    # Step 1: Create raw_data directory.
-   try:
-      os.makedirs("raw_data")
-   except FileExistsError:
-      pass
-   
+   os.makedirs("raw_data", exist_ok = True)
+
    #Step 2: Load parameters from config based on "type" of API request; assign api key to config["type"]["params"]["key"]; and initiate request.
    parameters = config_file[type]
    parameters["params"]["key"] = api_key
@@ -32,8 +26,10 @@ def main(config_file, type):
    response_as_df.to_csv(f"raw_data/{output_name}", index = False)
    
 if __name__ == "__main__":
+   with open("configuration/private_config.yaml", "r") as file:
+      private_config = yaml.safe_load(file)   
    with open("configuration/config.yaml", "r") as file:
       config = yaml.safe_load(file)
-   
-   main(config, type = "acs_request")
-   main(config, type = "decennial_census_request")
+      
+   main(private_config, config, type = "acs_request")
+   main(private_config, config, type = "decennial_census_request")

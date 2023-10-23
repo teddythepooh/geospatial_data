@@ -1,3 +1,7 @@
+crs_codes:
+  for_area_calculations: "EPSG:9822"
+  for_visualizatin: "EPSG:4236"
+
 acs_request:
   endpoint: "https://api.census.gov/data/2021/acs/acs5"
   params:
