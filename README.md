@@ -2,7 +2,7 @@
 
 As a Data Analytics Associate at the Urban Crime Lab in Chicago, I have to deal with geospatial data in my work. This repo documents **my geospatial work using *public* data from the US Census Bureau API and open data portals.**
 
-**I aim to project different statistics onto a map of Chicago at the neighborhood/community-area level: population, median household income, total housing units, Part I violent crime rates, and burglary rates. In the long-run, I hope to analytically determine food deserts by geocoding grocery store addresses&mdash;Aldi, Walmart, and Jewel Osco&mdash;and visualizing areas that are farther than *i* kilometers for *i = {1, 2,. . .}.*** The following datasets are available for download, along with the scripts that generate them (if applicable):
+**I aim to project different statistics onto a map of Chicago at the neighborhood level: population, median household income, total housing units, Part I violent crime rates, and burglary rates. In the long-run, I hope to analytically determine food deserts** by geocoding grocery store addresses&mdash;Aldi, Walmart, and Jewel Osco&mdash;and visualizing areas that are farther than *i* kilometers for *i = {1, 2,. . .}.* The following datasets are available for download, along with the scripts that generate them (if applicable):
 
 1. Chicago community area geometries (Source: Chicago Data Portal)
 2. Block group level household median income estimates from the 2021 American Community Survey (Source: US Census Bureau API)
