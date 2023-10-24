@@ -19,5 +19,5 @@ As a Data Analytics Associate at the Urban Crime Lab in Chicago, I have to deal 
 
 - The US Census does not formally obtain statistics at the "neighborhood" level for cities. Since a block group's geometry can reside within more than one neighborhood, dataset #4 above allows me to proportionally assign statistics by area. Suppose a block group has a population of 1000 people and 50% of its total area is within Albany Park; then, I would assign 500 of 1000 to Albany Park.
 
-- I leverage the Albers Equal Area projection (ESPG: 9822) for area calculations, but I reproject the geometries to World Geodetic System 1984 (ESPG: 4326) for visualization.
+- I leverage the Albers Equal Area projection (ESPG: 9822) for area calculations, but I reproject the geometries to World Geodetic System 1984 (ESPG: 4326) for visualization. By default, the CRS of the US Census and Chicago community area geometries are 4269 and 4326, respectively.
 </div>
