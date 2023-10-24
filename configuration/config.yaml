@@ -5,7 +5,7 @@ crs_codes:
 acs_request:
   endpoint: "https://api.census.gov/data/2021/acs/acs5"
   params:
-    get: "B19013_001E" #Median household income in the past 12 months (in 2021 inflation-adjusted dollars)
+    get: "B19013_001E" #MEDIAN HOUSEHOLD INCOME IN THE PAST 12 MONTHS
     for: "block group:*"
     in: "state:17+county:031"
     key: ""
