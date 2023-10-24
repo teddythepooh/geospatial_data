@@ -14,25 +14,25 @@ pd.options.display.float_format = '{:.2f}'.format
 
 def main(args, config_file):
     # Step 0: Pull data.    
-    block_level_stats = pd.read_csv(args.block_level_census_data)
+    block_group_estimates = pd.read_csv(args.block_group_estimates)
     community_areas = gp.read_file(args.community_areas)
     
-    block_level_stats_trimmed = block_level_stats.copy()[["GEOID", "geometry", "population", "total_housing_units"]]
+    block_group_estimates_trimmed = block_group_estimates.copy()[["GEOID", "geometry", "population", "total_housing_units"]]
     community_areas_trimmed = community_areas.copy()[["community", "geometry"]]
     
     crs_for_area_calculations = config_file["crs_codes"]["for_area_calculations"]
 
     # Step 1: Calculate how much each block group (by area) is within a specific neighorhood.
     # https://stackoverflow.com/questions/56433138/converting-a-column-of-polygons-from-string-to-geopandas-geometry
-    block_level_stats_trimmed["geometry"] = gp.GeoSeries.from_wkt(block_level_stats_trimmed["geometry"])
-    block_level_stats_trimmed = gp.GeoDataFrame(block_level_stats_trimmed, geometry = block_level_stats_trimmed["geometry"], crs = "EPSG:4269")
+    block_group_estimates_trimmed["geometry"] = gp.GeoSeries.from_wkt(block_group_estimates_trimmed["geometry"])
+    block_group_estimates_trimmed = gp.GeoDataFrame(block_group_estimates_trimmed, geometry = block_group_estimates_trimmed["geometry"], crs = "EPSG:4269")
 
-    block_level_stats_trimmed.to_crs(crs_for_area_calculations, inplace = True)
+    block_group_estimates_trimmed.to_crs(crs_for_area_calculations, inplace = True)
     community_areas_trimmed.to_crs(crs_for_area_calculations, inplace = True)    
     
-    block_level_stats_trimmed["block_area"] = block_level_stats_trimmed.area.round(2)
+    block_group_estimates_trimmed["block_area"] = block_group_estimates_trimmed.area.round(2)
 
-    result = gp.overlay(block_level_stats_trimmed, community_areas_trimmed, how = "union", keep_geom_type = False)
+    result = gp.overlay(block_group_estimates_trimmed, community_areas_trimmed, how = "union", keep_geom_type = False)
     result.dropna(subset = ["GEOID", "community"], inplace = True)
     result["area_of_intersection"] = result.area.round(2)
     result["pct"] = (result["area_of_intersection"] / result["block_area"]).round(3)
@@ -51,7 +51,7 @@ if __name__ == "__main__":
         config = yaml.safe_load(file)
     
     parser = argparse.ArgumentParser()
-    parser.add_argument("--block_level_census_data", default =  "processed_data/clean_block_level_census_data.csv")
+    parser.add_argument("--block_group_estimates", default =  "processed_data/block_group_estimates.csv")
     parser.add_argument("--community_areas", default = "raw_data/community_area_shapefiles/geo_export_f8931b70-ff47-499c-8e70-012e4eebd628.shp")
     parser.add_argument("--output_dir", default = "processed_data")
     

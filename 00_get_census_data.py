@@ -25,7 +25,7 @@ def main(private_config_file, config_file, type):
    output_name = parameters["output_name"]
    response_as_df.to_csv(f"raw_data/{output_name}", index = False)
    
-   print("Done. The census data has been pulled.")
+   print(f"Done. The {type} has been pulled.")
    
 if __name__ == "__main__":
    with open("configuration/private_config.yaml", "r") as file:

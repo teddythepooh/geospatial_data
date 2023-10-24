@@ -37,7 +37,7 @@ def main(args):
 
     ###### Step 3: Export block group level census data.
     os.makedirs(args.output_dir, exist_ok = True)
-    final_table.to_csv(f"{args.output_dir}/clean_block_level_census_data.csv", index = False)
+    final_table.to_csv(f"{args.output_dir}/block_group_estimates.csv", index = False)
     
     print(f"Done. The clean block level census data has been exported to {args.output_dir}.")
     
