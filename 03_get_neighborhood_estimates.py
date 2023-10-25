@@ -57,16 +57,3 @@ if __name__ == "__main__":
     args = parser.parse_args()
     
     main(args)
-
-''' scratch work
-fig = px.choropleth(result2, geojson = result2.geometry, locations = result2.index,  # Use the DataFrame index as locations
-                    z=result2['weighted_median_income'],  # Replace with the actual column name for neighborhood names
-                    hover_name = 'community', 
-                    hoverinfo='location+z+name',# Replace with the actual column name for neighborhood names
-                    title = 'Neighborhoods with Hover Names')
-color_options = ["population", "total_housing_units", "weighted_median_income"]
-buttons = [dict(label=col, method="restyle", args=[{"z": [result2[col]]}]) for col in color_options]
-fig.update_layout(updatemenu=[dict(type="buttons", showactive=True, buttons=buttons, x=1.1, xanchor="left", y=1.05, yanchor="top")])
-fig.update_geos(fitbounds = "locations", visible = False)
-fig.show()
-'''      
