@@ -2,6 +2,8 @@
 ## Data Sources: US Census Bureau API, Chicago Data Portal
 ## Software: Python, SQL (psql)
 
+### Let your working directory be at the project root `geospatial_analysis/.`** Refer to the `configuration` subdirectory for the `config.yaml` and `requirements.txt` files, the latter of which only applies to the .py scripts. My .sql scripts are intended to be run from psql *after* you connect to your server (localhost or otherwise).
+
 As a Data Analytics Associate at the Urban Crime Lab in Chicago, I have to deal with geospatial data in my work. This repo documents *solely* my own geospatial work from *public* data sources. **I aim to project different statistics onto a map of Chicago at the neighborhood level: population, median household income, total housing units, Part I violent crime rates, and burglary rates. In the long-run, I hope to identify food deserts** by visualizing areas that are farther than *i* kilometers for *i = {1, 2,. . .}* to a grocery store. The following datasets are available for download, along with the scripts that generate them (when applicable):
 
 1. Chicago community area geometries
@@ -18,6 +20,4 @@ As a Data Analytics Associate at the Urban Crime Lab in Chicago, I have to deal 
 - The US Census does not formally obtain statistics at the "neighborhood" level for cities. Since a block group's geometry can reside within more than one neighborhood, dataset #4 above allows me to proportionally assign statistics by area. Suppose a block group has a population of 1000 people and 50% of its total area is within Albany Park; then, I would assign 500 of 1000 to Albany Park.
 
 - I leverage the Albers Equal Area projection (ESPG: 9822) for area calculations, but I reproject the geometries to World Geodetic System 1984 (ESPG: 4326) for visualization. By default, the CRS of the US Census and Chicago community area geometries are 4269 and 4326, respectively.
-
-- All scripts are intended to be run from the project root (`geospatial_analysis/`), including the `.sql` script and `.py` scripts in `geospatial_analysis/src/`.
 </div>
