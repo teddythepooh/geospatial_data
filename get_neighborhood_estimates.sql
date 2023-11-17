@@ -1,3 +1,5 @@
+-- language: sql
+
 drop database if exists geospatial_analysis;
 create database geospatial_analysis;
 
