@@ -6,7 +6,7 @@ As a Data Analytics Associate at the Urban Crime Lab in Chicago, I have to deal 
 1. Chicago community area geometries
 2. Point coordinates of 200+ grocery stores in Chicago
 3. Block group estimates from the US Census Bureau API
-4. A crosswalk of block groups to community area, whereby I calculated how much of each block group is contained within a neigborhood
+4. A crosswalk of block group to community area, whereby I calculated how much of each block group is contained within a neigborhood
 
 #### If anyone would like to apply this repo in their work, note the following:
 <div style="text-align: justify;">
