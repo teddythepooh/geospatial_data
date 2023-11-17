@@ -1,3 +1,8 @@
+drop database if exists geospatial_analysis;
+create database geospatial_analysis;
+
+\c geospatial_analysis;
+
 create table if not exists block_group_estimates (
     GEOID char(12) NOT NULL,
     median_household_income integer,
