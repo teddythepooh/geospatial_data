@@ -1,9 +1,10 @@
-# Geospatial Analysis
-## Data Sources: US Census Bureau API, Chicago Data Portal
-## Software: Python, SQL (psql)
+Let your working directory be at the project root `geospatial_analysis/.` Refer to the `configuration/` subdirectory for the `config.yaml` and `requirements.txt` files, the latter of which only applies to the .py scripts. My .sql scripts are intended to be run from psql *after* you connect to your server (localhost or otherwise).
 
-### Let your working directory be at the project root `geospatial_analysis/.` Refer to the `configuration/` subdirectory for the `config.yaml` and `requirements.txt` files, the latter of which only applies to the .py scripts. My .sql scripts are intended to be run from psql *after* you connect to your server (localhost or otherwise).
+#### Data Sources: US Census Bureau API, Chicago Data Portal
+#### Software: Python, SQL (psql)
 
+# <p align="center"> Geospatial Analysis <p align="center">
+  
 As a Data Analytics Associate at the Urban Crime Lab in Chicago, I have to deal with geospatial data in my work. This repo documents *solely* my own geospatial work from *public* data sources. **I aim to project different statistics onto a map of Chicago at the neighborhood level: population, median household income, total housing units, Part I violent crime rates, and burglary rates. In the long-run, I hope to identify food deserts** by visualizing areas that are farther than *i* kilometers for *i = {1, 2,. . .}* to a grocery store. The following datasets are available for download, along with the scripts that generate them (when applicable):
 
 1. Chicago community area geometries
@@ -11,7 +12,7 @@ As a Data Analytics Associate at the Urban Crime Lab in Chicago, I have to deal 
 3. Block group estimates from the US Census Bureau API, plus their geometries (TIGER/Line)
 4. A crosswalk of block group to community area, whereby I calculated how much of each block group is contained within a neigborhood
 
-#### If anyone would like to apply this repo in their work, note the following:
+If anyone would like to apply this repo in their work, note the following:
 <div style="text-align: justify;">
   
 - You must register for an API key from the US Census. I deliberately stored mine in a `private_config.yaml`, hence the key value in `config.yaml` is an empty string. In lines 8 and 15 of `src/get_census_data.py,` I assign the api key from `private_config.yaml` back to the dictionary before initiating my API request.
