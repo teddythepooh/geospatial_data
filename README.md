@@ -1,11 +1,11 @@
 # Geospatial Analysis
 ## Sources: US Census Bureau API, Chicago Data Portal
 
-As a Data Analytics Associate at the Urban Crime Lab in Chicago, I have to deal with geospatial data in my work. This repo documents **my geospatial work using *public* data from the US Census Bureau API and open data portals. I aim to project different statistics onto a map of Chicago at the neighborhood level: population, median household income, total housing units, Part I violent crime rates, and burglary rates. In the long-run, I hope to analytically identify food deserts** by visualizing areas that are farther than *i* kilometers for *i = {1, 2,. . .}* to a grocery store. The following datasets are available for download, along with the scripts that generate them (when applicable):
+As a Data Analytics Associate at the Urban Crime Lab in Chicago, I have to deal with geospatial data in my work. This repo documents *solely* my own geospatial work from *public* data sources. **I aim to project different statistics onto a map of Chicago at the neighborhood level: population, median household income, total housing units, Part I violent crime rates, and burglary rates. In the long-run, I hope to identify food deserts** by visualizing areas that are farther than *i* kilometers for *i = {1, 2,. . .}* to a grocery store. The following datasets are available for download, along with the scripts that generate them (when applicable):
 
 1. Chicago community area geometries
 2. Point coordinates of 200+ grocery stores in Chicago
-3. Block group estimates from the US Census Bureau API
+3. Block group estimates from the US Census Bureau API, plus their geometries (TIGER/Line)
 4. A crosswalk of block group to community area, whereby I calculated how much of each block group is contained within a neigborhood
 
 #### If anyone would like to apply this repo in their work, note the following:
