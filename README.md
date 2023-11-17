@@ -21,5 +21,5 @@ As a Data Analytics Associate at the Urban Crime Lab in Chicago, I have to deal 
 
 - I leverage the Albers Equal Area projection (ESPG: 9822) for area calculations, but I reproject the geometries to World Geodetic System 1984 (ESPG: 4326) for visualization. By default, the CRS of the US Census and Chicago community area geometries are 4269 and 4326, respectively.
 
-- I ran `03_get_neighborhood_estimates.sql` at the project root (`..geospatial_analysis`) from psql.
+- All scripts are intended to be run from the project root (`geospatial_analysis/`), including the `.sql` scripts and `.py` scripts in `geospatial_analysis/src/`.
 </div>
