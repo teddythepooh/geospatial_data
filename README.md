@@ -1,5 +1,10 @@
 Let your working directory be at the project root `geospatial_analysis/`. Refer to the `configuration/` subdirectory for the `config.yaml` and `requirements.txt` files, the latter of which only applies to the .py scripts. Lastly, note that `main.py` and `create_database.sql` execute the scripts stored in `src/`.
 
+Order of Operations (as of November 18, 2023):
+1. `main.py`
+2. `create_database.sql`
+3. `robbery_rates_over_time.py`
+
 #### Data Sources: US Census Bureau API, Chicago Data Portal
 #### Software: Python, SQL (psql)
 

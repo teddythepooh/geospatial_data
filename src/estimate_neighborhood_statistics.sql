@@ -45,5 +45,5 @@ select
     round(sum(population_adjusted)) as total_population,
     round(sum(housing_units_adjusted)) as total_housing_units
 from temp 
-group by community_area
-order by community_area asc;
+group by neighborhood
+order by neighborhood asc;
