@@ -45,19 +45,5 @@ select
     round(sum(population_adjusted)) as total_population,
     round(sum(housing_units_adjusted)) as total_housing_units
 from temp 
-<<<<<<< HEAD:get_neighborhood_estimates.sql
-<<<<<<< Updated upstream:get_neighborhood_estimates.sql
 group by community_area
 order by community_area asc;
-
-\copy neighborhood_estimates to 'processed_data/neighborhood_estimates.csv' WITH DELIMITER ',' CSV HEADER;
-=======
-group by neighborhood
-order by neighborhood asc;
->>>>>>> Stashed changes:src/estimate_neighborhood_statistics.sql
-=======
-group by neighborhood
-order by neighborhood asc;
-
-\copy neighborhood_estimates to 'processed_data/neighborhood_census_estimates.csv' WITH DELIMITER ',' CSV HEADER;
->>>>>>> 08b5ec923e9a2e02de851acc9a0a2d75227c9f9a:src/estimate_neighborhood_statistics.sql
