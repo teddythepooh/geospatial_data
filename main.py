@@ -23,4 +23,5 @@ if __name__ == "__main__":
     args, extra = parser.parse_known_args()
 
     aggregate_census_data.main(args)
+    
     crosswalk_block_group_to_neighborhood.main(args, config)
