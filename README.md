@@ -4,6 +4,8 @@ Order of Operations (as of August 18, 2024):
 1. `main.py`
 2. `create_database.sql`
 
+https://public.tableau.com/app/profile/ted.chua/viz/ChicagoRobberyRateswithDemographicEstimateOverlay/Dashboard1
+
 ![image](https://github.com/user-attachments/assets/0447cd8d-efae-40a6-9b5b-97696a524e5a)
 
 
